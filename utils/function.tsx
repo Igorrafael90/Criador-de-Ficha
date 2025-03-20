@@ -1,3 +1,5 @@
+import { Cadastrado } from "./interface"
+
 export const Loginbutton = (
     setMode: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
@@ -15,8 +17,36 @@ export const RegisterUser = (
     Emailconf: string,
     Senha: string,
     Senhaconf: string
-) => {
-    if(Email != Emailconf || Senha != Senhaconf){
-        window.alert("Email ou Senha estão diferentes dos confirmados")
+): Cadastrado | null => {
+    if (!Email || !Senha || !Emailconf || !Senhaconf) {
+        alert('Preencha todos os campos');
+        return null;
     }
+    
+    if (Email !== Emailconf) {
+        alert("Emails não coincidem");
+        return null;
+    }
+
+    if (Senha !== Senhaconf) {
+        alert("Senhas não coincidem");
+        return null;
+    }
+
+    if (Senha.length !== 8) {
+        alert('A senha precisa ter exatamente 8 caracteres');
+        return null;
+    }
+
+    if (!Email.includes('@')) {
+        alert('Email inválido');
+        return null;
+    }
+
+    const novoUsuario: Cadastrado = {
+        email: Email.toLowerCase().trim(),
+        password: Senha
+    }
+    alert('usuario cadastrado')
+    return novoUsuario
 }
