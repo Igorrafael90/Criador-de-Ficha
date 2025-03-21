@@ -5,6 +5,7 @@ import { Background } from "@/components/squareanima";
 import { Loginbutton, Registerbutton, RegisterUser } from "@/utils/function";
 import { useState } from "react";
 import { Cadastrado } from "@/utils/interface";
+import Link from "next/link";
 
 export default function Home() {
   const [Mode, setMode] = useState(true)
@@ -23,7 +24,7 @@ export default function Home() {
           <button onClick={() => Loginbutton(setMode)} className={`text-2xl text-white hover:bg-[#E1604F] rounded-[3px] w-[35%]  ${Mode == true ? 'CircleLR' : ''}`}>LOGIN</button>
           <button onClick={() => Registerbutton(setMode)} className={`text-2xl text-white hover:bg-[#E1604F] rounded-[3px] w-[35%] ${Mode == true ? '' : 'CircleLR'}`}>CADASTRO</button>
         </div>
-        <div className={`bg-[#4B4869] rounded-[8px] w-72 h-96 ${Mode == true ? 'max-h-64' : ''}`}>
+        <div className={`bg-[#4B4869] rounded-[8px] w-72 h-96 ${Mode == true ? 'max-h-64 scalaReverse' : 'scala'}`}>
           {Mode == true ?(
             <form className="flex flex-col w-full h-full mt-4 ml-7" action="">
               <label className="block text-white mb-2">Email</label>
@@ -46,6 +47,9 @@ export default function Home() {
             </form>
           )}
         </div>
+        <Link href={`/CreatorRecord/`}>
+          <p className="text-white">a</p>
+        </Link>
       </main>
     </>
   );

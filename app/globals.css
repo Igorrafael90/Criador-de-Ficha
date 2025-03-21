@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --shadow-Page: -13px 9px 1px  #3B3D2A;
+  --shadow-Page2: 13px 9px 1px  #3B3D2A;
+}
+
 body {
   background: linear-gradient(180deg, #0D082D 31%, #1C125B 100%);
   background-attachment: fixed;
@@ -22,7 +27,7 @@ body {
   position: absolute;
   z-index: -1;
 }
- 
+
 .icone {
   width: 60px;
   height: 60px;
@@ -34,6 +39,14 @@ body {
   animation: anima linear infinite;
   animation-duration: calc(300s / var(--i));
 }
+
+.scala {
+  animation: scala 1.7s ease-in-out;
+}
+
+.scalaReverse {
+  animation: scalaReverse 1.7s ease-in-out;
+}
  
 @keyframes anima {
   0% {
@@ -44,3 +57,15 @@ body {
   }
 }
 
+@keyframes scala {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
+@keyframes scalaReverse {
+  0% { transform: scale(0); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
