@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --shadow-Page: -13px 9px 1px  #3B3D2A;
-  --shadow-Page2: 13px 9px 1px  #3B3D2A;
+  --shadow-Page: -13px 8px 1px  #3B3D2A;
+  --shadow-Page2: 13px 8px 1px  #3B3D2A;
 }
 
 body {
@@ -16,6 +16,10 @@ body {
   background-color: #E1604F;
   border-radius: 3px;
   width: 35%;
+}
+
+.CircleMIS {
+  background-color: #E1604F;
 }
 
 .container {

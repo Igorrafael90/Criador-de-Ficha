@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Background } from "@/components/squareanima";
-import { Loginbutton, Registerbutton, RegisterUser } from "@/utils/function";
+import { RegisterUser } from "@/utils/function";
 import { useState } from "react";
 import { Cadastrado } from "@/utils/interface";
 import Link from "next/link";
@@ -21,8 +21,8 @@ export default function Home() {
       <h1 className="text-4xl text-center text-white mt-1">FAÇA FICHA</h1>
       <main className="w-full h-full flex flex-col items-center justify-center">
         <div className="w-72 flex justify-between mb-3">
-          <button onClick={() => Loginbutton(setMode)} className={`text-2xl text-white hover:bg-[#E1604F] rounded-[3px] w-[35%]  ${Mode == true ? 'CircleLR' : ''}`}>LOGIN</button>
-          <button onClick={() => Registerbutton(setMode)} className={`text-2xl text-white hover:bg-[#E1604F] rounded-[3px] w-[35%] ${Mode == true ? '' : 'CircleLR'}`}>CADASTRO</button>
+          <button onClick={() => setMode(true)} className={`text-2xl text-white hover:bg-[#E1604F] rounded-[3px] w-[35%]  ${Mode == true ? 'CircleLR' : ''}`}>LOGIN</button>
+          <button onClick={() => setMode(false)} className={`text-2xl text-white hover:bg-[#E1604F] rounded-[3px] w-[35%] ${Mode == true ? '' : 'CircleLR'}`}>CADASTRO</button>
         </div>
         <div className={`bg-[#4B4869] rounded-[8px] w-72 h-96 ${Mode == true ? 'max-h-64 scalaReverse' : 'scala'}`}>
           {Mode == true ?(

@@ -1,16 +1,5 @@
 import { Cadastrado } from "./interface"
 
-export const Loginbutton = (
-    setMode: React.Dispatch<React.SetStateAction<boolean>>
-) => {
-    setMode(true)
-}
-
-export const Registerbutton = (
-    setMode: React.Dispatch<React.SetStateAction<boolean>>
-) => {
-    setMode(false)
-}
 
 export const RegisterUser = (
     Email: string,
